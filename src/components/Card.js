@@ -31,9 +31,24 @@ const Wrapper = styled.div`
   max-height: 250px;
   margin: 10px;
   border-radius: 10px;
+  border: solid 1px red;
 
   @media (max-width: 1000px) {
     min-height: 160px;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  margin-top: 15px;
+  border: solid 1px blue;
+
+  @media (max-width: 1000px) {
+    flex-direction: row;
+    margin-top: 50px;
   }
 `;
 
@@ -43,6 +58,7 @@ const IconContainer = styled.div`
   align-items: center;
   color: white;
   background-color: #437f3d;
+  border: solid 1px black;
 
   height: 60px;
   width: 60px;
@@ -73,19 +89,6 @@ const ArrowContainer = styled.div`
     display: flex;
     aspect-ratio: 1 / 1;
     margin-left: -70px;
-  }
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 85%;
-  margin-top: 15px;
-
-  @media (max-width: 1000px) {
-    flex-direction: row;
-    margin-top: 50px;
   }
 `;
 
