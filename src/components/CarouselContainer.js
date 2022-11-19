@@ -37,7 +37,7 @@ const CarouselContainer = ({ language }) => {
     >
       <Hero language={language} />
 
-      <Banner
+      {/* <Banner
         style={{
           backgroundImage: `url("https://images.unsplash.com/photo-1662668862763-dc613ee191ab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")`,
         }}
@@ -65,8 +65,8 @@ const CarouselContainer = ({ language }) => {
         style={{
           backgroundImage: `url("https://images.unsplash.com/photo-1661846601758-28ce69e3d480?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")`,
         }}
-      />
-      <Banner
+      /> */}
+      {/* <Banner
         style={{
           backgroundImage: `url("https://images.unsplash.com/photo-1662673965352-0fc620737c77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80")`,
         }}
@@ -80,7 +80,7 @@ const CarouselContainer = ({ language }) => {
         style={{
           backgroundImage: `url("https://images.unsplash.com/photo-1648334674879-d5f353b518e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2068&q=80")`,
         }}
-      />
+      /> */}
     </Carousel>
   );
 };
