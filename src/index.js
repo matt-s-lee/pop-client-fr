@@ -6,13 +6,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { ResourcesProvider } from "./contexts/ResourcesContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <LanguageProvider>
-      <App />
-    </LanguageProvider>
+    <ResourcesProvider>
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </ResourcesProvider>
   </React.StrictMode>
 );
 
