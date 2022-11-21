@@ -26,6 +26,8 @@ function App() {
       .then(([jsonResources, jsonSections]) => {
         setResources(jsonResources);
         setSections(jsonSections);
+        console.log("jsonresources", jsonResources);
+        console.log("jsonSections", jsonSections);
       });
   }, [ACCESS_TOKEN, setResources, setSections]);
 
