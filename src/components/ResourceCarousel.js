@@ -1,27 +1,27 @@
-import { useContext } from "react";
 import styled from "styled-components";
 import { useSpringCarousel } from "react-spring-carousel";
 
 import ResourceCard from "./ResourceCard";
-import { ResourcesContext } from "../contexts/ResourcesContext";
 
-const ResourceCarousel = () => {
-  const { resources } = useContext(ResourcesContext);
+const ResourceCarousel = ({ resources, tag }) => {
+  const resourceDetails = resources.items;
   const assetDetails = resources.includes.Asset;
-
-  const test = [];
-  assetDetails &&
-    assetDetails.forEach((asset) => {
-      test.push(asset.sys.id);
-      test.push(resources.fields.image.sys.id);
+  const taggedResources = [];
+  resourceDetails.forEach((resource) => {
+    console.log("resource", resource);
+    resource.metadata.tags.forEach((sysTag) => {
+      console.log("sysTag", sysTag);
+      if (sysTag.sys.id === tag) {
+        taggedResources.push(resource);
+      }
     });
-  console.log(test);
+  });
 
   const { carouselFragment, slideToPrevItem, slideToNextItem } =
     useSpringCarousel({
-      itemsPerSlide: 3,
+      itemsPerSlide: 2,
       gutter: -1,
-      items: resources.items.map((resource) => ({
+      items: taggedResources.map((resource) => ({
         id: resource.sys.id,
         renderItem: (
           <ResourceCard
@@ -31,31 +31,14 @@ const ResourceCarousel = () => {
               resource.fields.descriptionForSmallCard.content[0].content[0]
                 .value
             }
+            imageUrl={
+              assetDetails.find((asset) => {
+                return asset.sys.id === resource.fields.image.sys.id;
+              }).fields.file.url
+            }
           />
         ),
       })),
-      // [
-      //   {
-      //     id: "item-1",
-      //     renderItem: <ResourceCard />,
-      //   },
-      //   {
-      //     id: "item-2",
-      //     renderItem: <ResourceCard />,
-      //   },
-      //   {
-      //     id: "item-3",
-      //     renderItem: <ResourceCard />,
-      //   },
-      //   {
-      //     id: "item-4",
-      //     renderItem: <ResourceCard />,
-      //   },
-      //   {
-      //     id: "item-5",
-      //     renderItem: <ResourceCard />,
-      //   },
-      // ],
     });
 
   return (
