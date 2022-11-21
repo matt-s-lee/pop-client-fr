@@ -8,19 +8,26 @@ import HomePage from "./pages/HomePage";
 import "./App.css";
 
 function App() {
-  const { setResources } = useContext(ResourcesContext);
+  const { setResources, setSections } = useContext(ResourcesContext);
   const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
 
   useEffect(() => {
-    fetch(
-      `https://cdn.contentful.com/spaces/web30mio6wbr/environments/master/entries?access_token=${ACCESS_TOKEN}&content_type=resourceCard`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        setResources(json);
+    Promise.all([
+      fetch(
+        `https://cdn.contentful.com/spaces/web30mio6wbr/environments/master/entries?access_token=${ACCESS_TOKEN}&content_type=resourceCard`
+      ),
+      fetch(
+        `https://cdn.contentful.com/spaces/web30mio6wbr/environments/master/entries?access_token=${ACCESS_TOKEN}&content_type=section`
+      ),
+    ])
+      .then(([resResources, resSections]) =>
+        Promise.all([resResources.json(), resSections.json()])
+      )
+      .then(([jsonResources, jsonSections]) => {
+        setResources(jsonResources);
+        setSections(jsonSections);
       });
-  }, [ACCESS_TOKEN, setResources]);
+  }, [ACCESS_TOKEN, setResources, setSections]);
 
   return (
     <Router>
