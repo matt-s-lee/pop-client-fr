@@ -1,17 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import { BsPeople, BsSunFill, BsFillMoonStarsFill } from "react-icons/bs";
-// import { RiMapPinAddLine } from "react-icons/ri";
-// import { BiSearchAlt, BiUserCircle } from "react-icons/bi";
 import ReactComponent from "../assets/headerLogo.png";
-// import { useContext } from "react";
-// import { LanguageContext } from "../contexts/LanguageContext";
-// import Dropdown from "react-bootstrap/Dropdown";
-// import SearchBar from "./SearchBar";
 
 const Navbar = () => {
-  // const { language, toggleLanguage } = useContext(LanguageContext);
-
   return (
     <>
       <Notif>
