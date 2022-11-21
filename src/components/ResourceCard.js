@@ -15,11 +15,15 @@ const ResourceCard = ({ title, link, description, imageUrl }) => {
 const Card = styled.div`
   width: 18rem;
   height: 20rem;
+  margin: 1em;
   border: 1px solid #ececec;
   background-color: white;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.05);
   }
 `;
 const Image = styled.img`
