@@ -54,13 +54,13 @@ const Wrapper = styled.div`
 // `;
 
 
-const Button = styled.button`
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  background-color: #f54e5f;
-  border: none;
-  outline: none;
-  border-radius: 3px;
-  padding: 10px 20px;
-`;
+// const Button = styled.button`
+//   font-size: 16px;
+//   font-weight: 700;
+//   color: #fff;
+//   background-color: #f54e5f;
+//   border: none;
+//   outline: none;
+//   border-radius: 3px;
+//   padding: 10px 20px;
+// `;
