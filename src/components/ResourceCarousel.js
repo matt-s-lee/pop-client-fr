@@ -8,9 +8,7 @@ const ResourceCarousel = ({ resources, tag }) => {
   const assetDetails = resources.includes.Asset;
   const taggedResources = [];
   resourceDetails.forEach((resource) => {
-    console.log("resource", resource);
     resource.metadata.tags.forEach((sysTag) => {
-      console.log("sysTag", sysTag);
       if (sysTag.sys.id === tag) {
         taggedResources.push(resource);
       }
@@ -19,8 +17,8 @@ const ResourceCarousel = ({ resources, tag }) => {
 
   const { carouselFragment, slideToPrevItem, slideToNextItem } =
     useSpringCarousel({
-      itemsPerSlide: 2,
-      gutter: -1,
+      itemsPerSlide: 3,
+      gutter: 15,
       items: taggedResources.map((resource) => ({
         id: resource.sys.id,
         renderItem: (
@@ -54,6 +52,7 @@ const ResourceCarousel = ({ resources, tag }) => {
 
 const CarouselWrapper = styled.div`
   width: 100%;
+  margin-left: 10%;
   padding-bottom: 1.5em;
   overflow: hidden;
 `;
@@ -61,11 +60,14 @@ const CarouselWrapper = styled.div`
 const ButtonRow = styled.div`
   display: flex;
   justify-content: space-evenly;
+  margin-top: 1em;
 `;
 
 const Button = styled.button`
-  border-radius: 50%;
-  border: 1px solid darkgray;
+  width: 3em;
+  height: 3em;
+  border-radius: 80%;
+  border: 1px solid darkgrey;
 `;
 
 export default ResourceCarousel;

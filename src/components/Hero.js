@@ -1,13 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import background from "../assets/openhand.jpg";
+// import background from "../assets/openhand.jpg";
 import logo from "../assets/headerLogo.png";
 import { BsCheckCircleFill } from "react-icons/bs";
 
 const Hero = ({ language }) => {
+  const assessmentList = [
+    "Suivez vos progrès",
+    "Toujours accessible",
+    "Privé et confidentiel",
+    "Sans frais",
+  ];
+
   return (
-    <Wrapper style={{ backgroundImage: `url(${background})` }}>
+    <Wrapper>
       {/* <Row> */}
+      <Image src="https://images.ctfassets.net/xavhorxgg9l4/23XMFNG8HDYC2tiLha1Teq/51eaf3b29d65b624d7b3bb6f61761db9/Option_2_pexels-lukas-296282.jpg?w=1200&h=795&q=50" />
       <TextBox>
         <Title>Bienvenue</Title>
         <Body>
@@ -27,24 +35,16 @@ const Hero = ({ language }) => {
           douleur partout au Canada
         </AssessmentBody>
         <List>
-          <ListItem>
-            <Check>
-              <BsCheckCircleFill />
-            </Check>
-            Suivez vos progrès
-          </ListItem>
-          <ListItem>
-            <Check>
-              <BsCheckCircleFill />
-            </Check>
-            Toujours accessible
-          </ListItem>
-          <ListItem>
-            <Check>
-              <BsCheckCircleFill />
-            </Check>
-            Privé et confidentiel
-          </ListItem>
+          {assessmentList.map((element) => {
+            return (
+              <ListItem key={element}>
+                <Check>
+                  <BsCheckCircleFill />
+                </Check>
+                {element}
+              </ListItem>
+            );
+          })}
         </List>
         <StyledButton>Commencer aujourd'hui*</StyledButton>
         <AssessmentBody>
@@ -59,36 +59,33 @@ const Hero = ({ language }) => {
 export default Hero;
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 80%;
-  width: 100%;
-  background-position: bottom;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url(background);
-  background-size: cover;
-  background-repeat: no-repeat;
+  min-width: 0;
+  border-radius: 0.1875rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);
+
+  @media (min-width: 780px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 `;
 
-// const Row = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-start;
-//   align-items: center;
+const Image = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
 
-//   & > * {
-//     margin: 150px;
-//     width: 100%;
-//   }
-
-//   @media (min-width: 450px) {
-//     flex-direction: row;
-//     justify-content: space-around;
-//   }
-// `;
+  @media (min-width: 780px) {
+    width: 100%;
+  }
+`;
 
 const TextBox = styled.div`
   color: black;
@@ -105,20 +102,21 @@ const Title = styled.div`
 const Body = styled.div`
   font-size: 1.2em;
 `;
+
 const Bold = styled.span`
   font-weight: 700;
 `;
 
 const Assessment = styled.div`
+  color: #555555;
   background-color: #fff;
-  border-radius: 4px;
-  min-width: 300px;
+  border-radius: 0.4em;
   font: 1em;
   padding: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 1em 1em 1em;
+  margin: 1em;
 
   & > * {
     margin: 15px 0;
@@ -139,16 +137,20 @@ const List = styled.ul`
   text-align: left;
   padding: 0;
   width: 100%;
+  color: #555555;
 `;
 
 const ListItem = styled.li`
   list-style-type: none;
   display: flex;
   padding: 0.5em 0;
+  font-weight: 600;
 `;
 
 const Check = styled.div`
+  font-weight: 400;
   margin-right: 1em;
+  font-size: 1.2em;
 `;
 
 const StyledButton = styled.button`
