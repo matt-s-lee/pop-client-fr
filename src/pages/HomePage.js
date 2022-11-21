@@ -1,22 +1,34 @@
-import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
-import HelpWindow from "../components/HelpWindow";
 import Hero from "../components/Hero";
-import ResourceCarousel from "../components/ResourceCarousel";
+import Section from "../components/Section";
+import { ResourcesContext } from "../contexts/ResourcesContext";
 
 const HomePage = () => {
+  const { sections } = useContext(ResourcesContext);
+
   return (
     <Wrapper>
       <Hero />
       <InfoBar />
-      <Section>
+      {sections &&
+        sections.items.map((section) => {
+          return (
+            <Section
+              key={section.sys.id}
+              title={section.fields.sectionTitle}
+              description={
+                section.fields.description.content[0].content[0].value
+              }
+              tag={section.metadata.tags[0].sys.id}
+            />
+          );
+        })}
+      {/* <SectionStyle>
         <Title>Obtenez le soutien. Toujours gratuit.</Title>
-        <ResourceCarousel />
+        {resources && <ResourceCarousel resources={resources} />}
         <Button>View All Available Tools</Button>
-      </Section>
-      <div>
-        <HelpWindow />
-      </div>
+      </SectionStyle> */}
     </Wrapper>
   );
 };
@@ -41,7 +53,7 @@ const InfoBar = styled.div`
 //   align-items: center;
 // `;
 
-const Section = styled.section`
+const SectionStyle = styled.section`
   border: 1px solid black;
   background-color: #f2f3f4;
   display: flex;
