@@ -9,15 +9,15 @@ import "./App.css";
 
 function App() {
   const { setResources, setSections } = useContext(ResourcesContext);
-  const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
+  const { REACT_APP_ACCESS_TOKEN } = process.env;
 
   useEffect(() => {
     Promise.all([
       fetch(
-        `https://cdn.contentful.com/spaces/web30mio6wbr/environments/master/entries?access_token=${ACCESS_TOKEN}&content_type=resourceCard`
+        `https://cdn.contentful.com/spaces/web30mio6wbr/environments/master/entries?access_token=${REACT_APP_ACCESS_TOKEN}&content_type=resourceCard`
       ),
       fetch(
-        `https://cdn.contentful.com/spaces/web30mio6wbr/environments/master/entries?access_token=${ACCESS_TOKEN}&content_type=section`
+        `https://cdn.contentful.com/spaces/web30mio6wbr/environments/master/entries?access_token=${REACT_APP_ACCESS_TOKEN}&content_type=section`
       ),
     ])
       .then(([resResources, resSections]) =>
@@ -29,7 +29,7 @@ function App() {
         console.log("jsonresources", jsonResources);
         console.log("jsonSections", jsonSections);
       });
-  }, [ACCESS_TOKEN, setResources, setSections]);
+  }, [REACT_APP_ACCESS_TOKEN, setResources, setSections]);
 
   return (
     <Router>
