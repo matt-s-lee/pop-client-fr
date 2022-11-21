@@ -17,6 +17,10 @@ const Card = styled.div`
   height: 20rem;
   border: 1px solid #ececec;
   background-color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const Image = styled.img`
   width: 100%;

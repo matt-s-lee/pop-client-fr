@@ -17,11 +17,10 @@ const Navbar = () => {
           </Header>
         </Ul>
         <Ul>
-          <ClickLi
-          // onClick={language === "fre" ? toggleLanguage : null}
-          // className={language === "eng" && "clicked"}
-          >
-            EN
+          <ClickLi>
+            <EnglishSite href="https://poweroverpaincanada.portal.gs/">
+              EN
+            </EnglishSite>
           </ClickLi>
           <ClickLi>FR</ClickLi>
         </Ul>
@@ -60,24 +59,6 @@ const StyledLogo = styled.img`
   height: 60px;
 `;
 
-// const Tab = styled(Link)`
-//   width: 100%;
-//   color: var(--clr-fg);
-//   text-align: center;
-//   padding: 14px 16px;
-//   text-decoration: none;
-//   font-size: 24px;
-//   /* Change the color of links on hover */
-//   &:hover {
-//     color: var(--clr-fg);
-//   }
-//   /* Add a color to the active/current link */
-//   &:active {
-//     background-color: var(--clr-primary);
-//     color: var(--clr-fg);
-//   }
-// `;
-
 const Ul = styled.nav`
   display: flex;
   margin-right: 1.5em;
@@ -87,17 +68,6 @@ const Ul = styled.nav`
     margin-left: 1.5em;
   }
 `;
-
-// const StyledButton = styled.button`
-//   font-size: 16px;
-//   font-weight: 700;
-//   color: #fff;
-//   background-color: #f54e5f;
-//   border: none;
-//   outline: none;
-//   border-radius: 3px;
-//   padding: 10px 20px;
-// `;
 
 const Header = styled(Link)`
   font-size: 32px;
@@ -110,16 +80,17 @@ const Header = styled(Link)`
   color: var(--clr-primary);
 `;
 
-// const Li = styled.li`
-//   color: #666666;
-//   font-size: 14px;
-//   font-weight: 700;
-// `;
-
 const ClickLi = styled.li`
   color: #666666;
   font-size: 15px;
   font-weight: 700;
+`;
+
+const EnglishSite = styled.a`
+  color: #666666;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;

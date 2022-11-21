@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 1em 0;
   width: 100%;
+  overflow: hidden;
   background: ${(props) =>
     props.index === 0 || props.index % 2 === 0 ? "#eee" : "none"};
 `;
