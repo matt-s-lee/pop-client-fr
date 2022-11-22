@@ -69,17 +69,17 @@ const Wrapper = styled.div`
   }
 `;
 
-const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  opacity: 0.5;
-  position: absolute;
-  z-index: -1;
+// const Image = styled.img`
+//   height: 100%;
+//   width: 100%;
+//   object-fit: cover;
+//   opacity: 0.5;
+//   position: absolute;
+//   z-index: -1;
 
-  @media (min-width: 780px) {
-  }
-`;
+//   @media (min-width: 780px) {
+//   }
+// `;
 
 const TextBox = styled.div`
   color: black;
