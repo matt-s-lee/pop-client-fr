@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import ReactComponent from "../assets/headerLogo.png";
+import ReactComponent from "../assets/popFr.png";
 
 const Navbar = () => {
   return (
@@ -22,7 +22,7 @@ const Navbar = () => {
               EN
             </EnglishSite>
           </ClickLi>
-          <ClickLi>FR</ClickLi>
+          <ClickLi style={{ fontWeight: 700 }}>FR</ClickLi>
         </Ul>
       </Nav>
     </>
@@ -83,13 +83,12 @@ const Header = styled(Link)`
 const ClickLi = styled.li`
   color: #666666;
   font-size: 15px;
-  font-weight: 700;
 `;
 
 const EnglishSite = styled.a`
   color: #666666;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 400;
   text-decoration: none;
 
   &:hover {

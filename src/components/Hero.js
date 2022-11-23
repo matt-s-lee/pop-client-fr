@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // import background from "../assets/openhand.jpg";
-import logo from "../assets/headerLogo.png";
+import logo from "../assets/popFr.png";
 import { BsCheckCircleFill } from "react-icons/bs";
 
 const Hero = ({ myRef }) => {
@@ -114,6 +114,10 @@ const Assessment = styled.div`
 
   & > * {
     margin: 15px 0;
+  }
+
+  @media (min-width: 780px) {
+    min-width: 375px;
   }
 `;
 
