@@ -4,17 +4,18 @@ import styled from "styled-components";
 import logo from "../assets/headerLogo.png";
 import { BsCheckCircleFill } from "react-icons/bs";
 
-const Hero = ({ language }) => {
+const Hero = ({ myRef }) => {
   const assessmentList = [
     "Toujours accessible",
     "Privé et confidentiel",
     "Sans frais",
   ];
 
+  const executeScroll = () =>
+    myRef.current?.scrollIntoView({ behaviour: "smooth" });
+
   return (
     <Wrapper>
-      {/* <Row> */}
-      {/* <Image src="https://images.ctfassets.net/xavhorxgg9l4/23XMFNG8HDYC2tiLha1Teq/51eaf3b29d65b624d7b3bb6f61761db9/Option_2_pexels-lukas-296282.jpg?w=1200&h=795&q=50" /> */}
       <TextBox>
         <Title>Bienvenue</Title>
         <Body>
@@ -45,9 +46,10 @@ const Hero = ({ language }) => {
             );
           })}
         </List>
-        <StyledButton>Cliquer pour voir les ressources plus bas</StyledButton>
+        <StyledButton onClick={executeScroll}>
+          Cliquer pour voir les ressources plus bas
+        </StyledButton>
       </Assessment>
-      {/* </Row> */}
     </Wrapper>
   );
 };
@@ -57,8 +59,11 @@ export default Hero;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   overflow: hidden;
+  padding: 2.5em;
   background-image: url("https://images.ctfassets.net/xavhorxgg9l4/23XMFNG8HDYC2tiLha1Teq/51eaf3b29d65b624d7b3bb6f61761db9/Option_2_pexels-lukas-296282.jpg?w=1200&h=795&q=50");
   background-color: rgba(76, 175, 80, 0.5);
   background-size: cover;
@@ -68,18 +73,6 @@ const Wrapper = styled.div`
     justify-content: space-around;
   }
 `;
-
-// const Image = styled.img`
-//   height: 100%;
-//   width: 100%;
-//   object-fit: cover;
-//   opacity: 0.5;
-//   position: absolute;
-//   z-index: -1;
-
-//   @media (min-width: 780px) {
-//   }
-// `;
 
 const TextBox = styled.div`
   color: black;
@@ -102,19 +95,22 @@ const Bold = styled.span`
 `;
 
 const Assessment = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 2.5em; */
+  overflow: hidden;
+
   min-height: 600px;
+  min-width: 300px;
+  max-width: 500px;
   color: #555555;
   background-color: #fff;
   border-radius: 0.4em;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   font: 1em;
   padding: 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1em;
-  overflow: hidden;
 
   & > * {
     margin: 15px 0;

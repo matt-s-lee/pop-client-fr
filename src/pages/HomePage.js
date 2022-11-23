@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import styled from "styled-components";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
@@ -6,16 +6,12 @@ import { ResourcesContext } from "../contexts/ResourcesContext";
 
 const HomePage = () => {
   const { sections } = useContext(ResourcesContext);
+  const myRef = useRef(null);
 
   return (
     <Wrapper>
-      <Hero />
-      {/* <Section
-        key={"allTools"}
-        title={"Apprendre sur votre douleur, son impact et comment la gérer"}
-        description={""}
-        tag={""}
-      /> */}
+      <Hero myRef={myRef} />
+      <div ref={myRef}></div>
       {sections &&
         sections.items.map((section, index) => {
           return (
@@ -30,9 +26,12 @@ const HomePage = () => {
             />
           );
         })}
-      {/* 
-        <Button>View All Available Tools</Button>
-      */}
+      {/* <Section
+        key={"allTools"}
+        title={"Apprendre sur votre douleur, son impact et comment la gérer"}
+        description={""}
+        tag={""}
+      /> */}
     </Wrapper>
   );
 };
@@ -52,7 +51,6 @@ const Wrapper = styled.div`
 //   justify-content: center;
 //   align-items: center;
 // `;
-
 
 // const Button = styled.button`
 //   font-size: 16px;
