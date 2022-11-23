@@ -26,8 +26,6 @@ function App() {
       .then(([jsonResources, jsonSections]) => {
         setResources(jsonResources);
         setSections(jsonSections);
-        console.log("jsonresources", jsonResources);
-        console.log("jsonSections", jsonSections);
       });
   }, [REACT_APP_ACCESS_TOKEN, setResources, setSections]);
 
