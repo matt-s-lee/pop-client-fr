@@ -12,7 +12,7 @@ export default function Section({ title, description, tag, index }) {
     <Wrapper index={index}>
       <Title>{title}</Title>
       <Description>{description}</Description>
-      {resources && <ResourceCarousel resources={resources} tag={tag} />}
+      {resources && tag && <ResourceCarousel resources={resources} tag={tag} />}
     </Wrapper>
   );
 }
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em 0;
+  padding: 3em 0;
   width: 100%;
   overflow: hidden;
   background: ${(props) =>
