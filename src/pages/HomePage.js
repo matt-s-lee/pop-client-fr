@@ -26,12 +26,6 @@ const HomePage = () => {
             />
           );
         })}
-      {/* <Section
-        key={"allTools"}
-        title={"Apprendre sur votre douleur, son impact et comment la gérer"}
-        description={""}
-        tag={""}
-      /> */}
     </Wrapper>
   );
 };

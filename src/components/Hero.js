@@ -117,7 +117,7 @@ const Assessment = styled.div`
   }
 
   @media (min-width: 780px) {
-    min-width: 375px;
+    min-width: 425px;
   }
 `;
 
