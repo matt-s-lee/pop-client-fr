@@ -19,10 +19,10 @@ const HomePage = () => {
               key={section.sys.id}
               index={index}
               title={section.fields.sectionTitle}
-              description={
-                section.fields.description.content[0].content[0].value
-              }
-              tag={section.metadata.tags[0].sys.id}
+              // description={
+              //   section?.fields?.description?.content[0]?.content[0]?.value
+              // }
+              tag={section?.metadata?.tags[0]?.sys?.id}
             />
           );
         })}

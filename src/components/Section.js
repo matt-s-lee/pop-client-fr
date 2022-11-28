@@ -5,13 +5,12 @@ import styled from "styled-components";
 
 import ResourceCarousel from "./ResourceCarousel";
 
-export default function Section({ title, description, tag, index }) {
+export default function Section({ title, tag, index }) {
   const { resources } = useContext(ResourcesContext);
 
   return (
     <Wrapper index={index}>
       <Title>{title}</Title>
-      <Description>{description}</Description>
       {resources && tag && <ResourceCarousel resources={resources} tag={tag} />}
     </Wrapper>
   );
@@ -35,11 +34,4 @@ const Title = styled.h2`
   font-weight: 600;
   font-size: 30px;
   text-align: center;
-`;
-
-const Description = styled.div`
-  color: #555;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin-bottom: 2em;
 `;
