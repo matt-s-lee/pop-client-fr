@@ -83,16 +83,16 @@ const ResourceWrapper = styled.div`
   overflow: hidden;
 
   @media (min-width: 780px) {
-    padding: 0 10%;
+    /* padding: 0 10%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 1em;
+    grid-column-gap: 1em; */
     /* justify-content: flex-start; */
   }
 
   @media (min-width: 1000px) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 2em;
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2em; */
   }
 `;
 

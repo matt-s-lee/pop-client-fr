@@ -20,11 +20,12 @@ const ResourceCard = ({ title, link, description, imageUrl }) => {
 
 const Card = styled.div`
   width: 17rem;
-  height: 19rem;
+  height: 20rem;
   margin: 1em;
   border: 1px solid #ececec;
   background-color: white;
   overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
   &:hover {
