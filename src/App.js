@@ -6,6 +6,7 @@ import { ResourcesContext } from "./contexts/ResourcesContext";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   const { setResources, setSections } = useContext(ResourcesContext);
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<HomePage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
