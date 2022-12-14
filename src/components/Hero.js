@@ -64,8 +64,11 @@ const Wrapper = styled.div`
   height: 100%;
   overflow: hidden;
   padding: 2.5em;
-  background-image: url("https://images.ctfassets.net/xavhorxgg9l4/23XMFNG8HDYC2tiLha1Teq/51eaf3b29d65b624d7b3bb6f61761db9/Option_2_pexels-lukas-296282.jpg?w=1200&h=795&q=50");
-  background-color: rgba(76, 175, 80, 0.5);
+  background: linear-gradient(
+      rgba(112, 112, 112, 0.6),
+      rgba(112, 112, 112, 0.6)
+    ),
+    url("https://images.ctfassets.net/xavhorxgg9l4/23XMFNG8HDYC2tiLha1Teq/51eaf3b29d65b624d7b3bb6f61761db9/Option_2_pexels-lukas-296282.jpg?w=1200&h=795&q=50");
   background-size: cover;
 
   @media (min-width: 780px) {
@@ -75,7 +78,7 @@ const Wrapper = styled.div`
 `;
 
 const TextBox = styled.div`
-  color: black;
+  color: white;
   min-width: 300px;
   padding: 10%;
 `;
