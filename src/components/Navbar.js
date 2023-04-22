@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import ReactComponent from "../assets/popFr.png";
+import ReactComponent from "../assets/PoP-Portal-Adult_FRENCH-768x357.png";
 
 const Navbar = () => {
   return (
@@ -18,7 +18,10 @@ const Navbar = () => {
         </Ul>
         <Ul>
           <ClickLi>
-            <EnglishSite href="https://poweroverpaincanada.portal.gs/">
+            <EnglishSite
+              href="https://poweroverpaincanada.portal.gs/"
+              target="_blank"
+            >
               EN
             </EnglishSite>
           </ClickLi>
