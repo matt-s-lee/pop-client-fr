@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // import background from "../assets/openhand.jpg";
-import logo from "../assets/popFr.png";
+import logo from "../assets/PoP-Portal-Adult_FRENCH-768x357.png";
 import { BsCheckCircleFill } from "react-icons/bs";
 
 const Hero = ({ myRef }) => {
@@ -68,7 +68,7 @@ const Wrapper = styled.div`
       rgba(112, 112, 112, 0.6),
       rgba(112, 112, 112, 0.6)
     ),
-    url("https://images.ctfassets.net/xavhorxgg9l4/23XMFNG8HDYC2tiLha1Teq/51eaf3b29d65b624d7b3bb6f61761db9/Option_2_pexels-lukas-296282.jpg?w=1200&h=795&q=50");
+    url("https://images.ctfassets.net/xavhorxgg9l4/5GgtHiOYLIGNH0bAmHLOTh/9c1a33a1de5c1dc4c48272c87e55a91c/image.png?w=400&q=50");
   background-size: cover;
 
   @media (min-width: 780px) {
@@ -85,7 +85,6 @@ const TextBox = styled.div`
 
 const Title = styled.div`
   font-size: 2.2em;
-  font-family: "Merriweather", serif;
   font-weight: 700;
 `;
 
@@ -130,7 +129,7 @@ const AssessmentBody = styled.div`
 `;
 
 const StyledLogo = styled.img`
-  width: 40%;
+  width: 80%;
   margin: 20px 0 0 0;
 `;
 
