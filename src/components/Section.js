@@ -29,7 +29,6 @@ const Wrapper = styled.div`
 
 const Title = styled.h2`
 margin: 0 1em 1em 1em;
-font-family: "Merriweather", serif;
   color: #222;
   font-weight: 600;
   font-size: 30px;
