@@ -20,7 +20,7 @@ const ResourceCard = ({ title, link, description, imageUrl }) => {
 
 const Card = styled.div`
   width: 17rem;
-  height: 20rem;
+  height: 30rem;
   margin: 1em;
   border: 1px solid #ececec;
   background-color: white;
@@ -39,7 +39,7 @@ const Card = styled.div`
   }
   @media (min-width: 1250px) {
     width: 18rem;
-    height: 20rem;
+    height: 30rem;
   }
 `;
 const Image = styled.img`
@@ -58,6 +58,8 @@ const Title = styled.div`
   color: #333333;
   font-size: 16px;
   font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5em;
 `;
 
 const Text = styled.p`
@@ -65,7 +67,7 @@ const Text = styled.p`
   /* overflow: hidden; */
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   /* text-overflow: ellipsis; */
   /* line-height: 1.5em; */
