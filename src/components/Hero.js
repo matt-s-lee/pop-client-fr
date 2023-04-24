@@ -28,7 +28,7 @@ const Hero = ({ myRef }) => {
       <Assessment>
         <StyledLogo src={logo} />
         <Title style={{ textAlign: "center", fontSize: "1.4em" }}>
-          Commencez votre voyage
+          Commencez dès aujourd'hui!
         </Title>
         <AssessmentBody>
           Conçu pour les adultes (18 ans et plus) et les professionnels de la
